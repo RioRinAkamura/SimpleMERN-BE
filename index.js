@@ -10,10 +10,16 @@ const app = express();
 dotenv.config();
 
 // CONNECT DATABASE
-mongoose.connect((process.env.DATABASE_URL), () => {
-    console.log("Connected to MongoDB");
-})
-
+mongoose.connect(
+    process.env.DATABASE_URL,
+    {
+        useNewUrlParser: "true",
+        useUnifiedTopology: "true",
+    },
+    () => {
+        console.log("Connected to MongoDB");
+    }
+);
 
 // app.use(bodyParser.json({ limit: '50bm' }));
 app.use(express.json());
