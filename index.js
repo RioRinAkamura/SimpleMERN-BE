@@ -11,7 +11,8 @@ dotenv.config();
 
 // CONNECT DATABASE
 mongoose.connect(
-    process.env.DATABASE_URL,
+    // process.env.DATABASE_URL,
+    "mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
         useNewUrlParser: "true",
         useUnifiedTopology: "true",
@@ -21,9 +22,10 @@ mongoose.connect(
     }
 );
 
-// app.use(bodyParser.json({ limit: '50bm' }));
+app.use(bodyParser.json({ limit: '30bm' }));
 app.use(express.json());
 app.use(cors());
+app.use(morgan("common"));
 
 // ROUTES
 app.use("/api/auth", authRouter);
