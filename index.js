@@ -24,7 +24,7 @@ dotenv.config();
 const connectDB = async () => {
     try {
         await mongoose.connect(
-            "mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+            'mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
             {
                 useNewUrlParser: true,
             }
@@ -44,8 +44,8 @@ app.use(express.json());
 app.use(cors());
 
 // ROUTES
-app.use("/api/auth", authRouter);
-app.use("/api/posts", postRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/posts', postRouter);
 
 const PORT = process.env.PORT || 5000;
 
