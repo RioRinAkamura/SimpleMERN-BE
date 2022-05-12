@@ -8,29 +8,12 @@ const postRouter = require("./routes/post");
 const app = express();
 
 dotenv.config();
+
 // CONNECT DATABASE
-// mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, () => {
+mongoose.connect((process.env.DATABASE_URL), () => {
+    console.log("Connected to MongoDB");
+})
 
-// console.log("Connected to MongoDB");
-// })
-
-const connectDB = async () => {
-    try {
-        await mongoose.connect(
-            `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-            }
-        );
-
-        console.log("MongoDB connected");
-    } catch (error) {
-        console.log(error.message);
-        process.exit(1);
-    }
-};
-connectDB();
 
 // app.use(bodyParser.json({ limit: '50bm' }));
 app.use(express.json());
