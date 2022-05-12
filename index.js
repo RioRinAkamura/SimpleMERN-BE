@@ -25,7 +25,6 @@ mongoose.connect(
 app.use(bodyParser.json({ limit: '30bm' }));
 app.use(express.json());
 app.use(cors());
-app.use(morgan("common"));
 
 // ROUTES
 app.use("/api/auth", authRouter);
