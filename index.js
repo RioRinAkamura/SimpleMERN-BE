@@ -10,32 +10,32 @@ const app = express();
 dotenv.config();
 
 // CONNECT DATABASE
-// mongoose.connect(
-//     // process.env.DATABASE_URL,
-//     "mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-//     {
-//         useNewUrlParser: "true",
-//     },
-//     () => {
-//         console.log("Connected to MongoDB");
-//     }
-// );
-
-const connectDB = async () => {
-    try {
-        await mongoose.connect(
-            'mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-            {
-                useNewUrlParser: true,
-            }
-        )
-
-        console.log('MongoDB connected')
-    } catch (error) {
-        console.log(error.message)
-        process.exit(1)
+mongoose.connect(
+    // process.env.DATABASE_URL,
+    "mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    {
+        useNewUrlParser: "true",
+    },
+    () => {
+        console.log("Connected to MongoDB");
     }
-}
+);
+
+// const connectDB = async () => {
+//     try {
+//         await mongoose.connect(
+//             'mongodb+srv://rinnguyen:nguyenthanhrin260396@cluster0.eivch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+//             {
+//                 useNewUrlParser: true,
+//             }
+//         )
+
+//         console.log('MongoDB connected')
+//     } catch (error) {
+//         console.log(error.message)
+//         process.exit(1)
+//     }
+// }
 
 connectDB()
 
