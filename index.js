@@ -37,7 +37,7 @@ mongoose.connect(
 //     }
 // }
 
-connectDB()
+// connectDB()
 
 // app.use(bodyParser.json({ limit: '30bm' }));
 app.use(express.json());
